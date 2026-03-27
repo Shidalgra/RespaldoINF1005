@@ -1,0 +1,132 @@
+/*Limpiando*/
+
+/* Selecciona TODOS los elementos */
+*,
+*::before,
+*::after {
+  margin: 0; /* Quita márgenes externos */
+  padding: 0; /* Quita rellenos internos */
+  box-sizing: border-box; /* ¡VITAL! Hace que el padding no sume al ancho total */
+}
+
+html {
+  scroll-behavior: smooth; /* Hace que al saltar entre secciones el scroll sea suave */
+}
+
+body {
+  min-height: 100vh; /* Alto del vieport - Que siempre ocupe al menos el alto de la pantalla */
+  line-height: 1.5; /* Mejora la lectura del texto */
+  -webkit-font-smoothing: antialiased; /* Hace que las letras se vean más finas y nítidas */
+  font-family:
+    "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* O la fuente que elijas */
+  background-color: #f4f4f4;
+  color: #333;
+  overflow-x: hidden; /* Evita el scroll horizontal molesto por errores de píxeles */
+}
+
+/* Evita que las imágenes se salgan de su contenedor */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block; /* Quita un espacio extraño que dejan abajo las imágenes */
+  max-width: 100%;
+}
+
+/* Quita los puntos de las listas (ul/ol) */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Quita la línea de abajo de los enlaces y les da un color base */
+a {
+  text-decoration: none;
+  color: inherit; /* Hereda el color del texto del padre */
+}
+
+/* Hace que los botones y inputs se vean iguales en todos lados */
+button,
+input,
+textarea {
+  font: inherit; /* Obliga a usar la misma fuente que el body */
+  border: none;
+  outline: none; /* Quita el borde azul feo al hacer clic */
+}
+
+button {
+  cursor: pointer; /* Siempre pone la manito al pasar el mouse */
+}
+
+/* ----------------------------------------------------------------------------------- */
+
+.center-father {
+  height: 100vh; /* 100% de la altura de la pantalla */
+  display: flex;
+  justify-content: center; /* Centro horizontal */
+  align-items: center; /* Centro vertical */
+  background-color: #f0f0f0;
+}
+
+.child-box {
+  padding: 20px;
+  background: #ff4757;
+  color: white;
+  border-radius: 8px;
+}
+
+/* ----------------------------------------------------------------------------------- */
+
+.container-grid {
+  display: grid;
+  /* El truco: mínimo 200px, máximo repartir el espacio (1fr) */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px; /* Espacio entre tarjetas */
+  padding: 20px;
+}
+
+.container-grid .tarjeta {
+  background: #2f3542;
+  color: white;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}   
+
+/* ----------------------------------------------------------------------------------- */
+
+.master-layout {
+  display: grid;
+  height: 100vh;
+  grid-template-areas: 
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 60px 1fr 40px;
+}
+
+header { grid-area: header; background: #3742fa; color: white; }
+aside  { grid-area: sidebar; background: #ced4da; }
+main   { grid-area: main; background: white; }
+footer { grid-area: footer; background: #2f3542; color: white; }
+
+/* ----------------------------------------------------------------------------------- */
+
+.sticky-menu {
+  position: sticky;
+  top: 0;                /* Se queda pegado a 0px del borde superior */
+  background: #f0ab7d;
+  padding: 15px;
+  color: white;
+  z-index: 100;          /* Para que siempre esté por encima del resto */
+}
+
+.long-content {
+  height: 2000px;        /* Espacio para poder hacer scroll */
+  background: linear-gradient(to bottom, #ffffff, #dfe4ea);
+  padding: 20px;
+}
