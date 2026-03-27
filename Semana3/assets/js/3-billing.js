@@ -8,9 +8,9 @@ for (let i = 1; i <= cantidadProductos; i++) {      // Creamos el loop que recor
 }
 
 if (cantidadProductos > 20) {                       // Aca le creamos una condición para aplicar el descuento
-  totalCosto *= 0.8; // 20% descuento
-} else if (cantidadProductos > 10) {
-  totalCosto *= 0.9; // 10% descuento
+  totalCosto *= 0.8; // 20% descuento               // Calculo matemático    
+} else if (cantidadProductos > 10) {                // Le creamos otra condición 
+  totalCosto *= 0.9; // 10% descuento               // Y hacemos el calculo matemático
 }
 
-console.log(`Total final a pagar: ₡${totalCosto}`);
+console.log(`Total final a pagar: ₡${totalCosto}`); // Mostramos en consola el resultado
