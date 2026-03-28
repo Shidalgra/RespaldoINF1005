@@ -13,4 +13,4 @@ if (cantidadProductos > 20) {                       // Aca le creamos una condic
   totalCosto *= 0.9; // 10% descuento               // Y hacemos el calculo matemático
 }
 
-console.log(`Total final a pagar: ₡${totalCosto}`); // Mostramos en consola el resultado
+console.log(`Total final a pagar: ₡${totalCosto}`); // Mostramos en consola el resultado calculado anteriormente
