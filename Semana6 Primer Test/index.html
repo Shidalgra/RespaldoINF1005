@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>First test</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/images/Logo_Activando_El_Coeficiente_Intelectual_Tab.png"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <h1>IT Invetory Register</h1>
+      <div class="form-card">
+          <select id="type">
+          <option value="Category" disabled selected hidden>Category</option>
+          <option value="Server">Server</option>
+          <option value="Laptop">Laptop</option>
+          <option value="DesktopPC">Desktop-PC</option>
+        </select>
+        <input type="text" id="name" placeholder="Hardware name" />
+        <input type="number" id="ram" placeholder=" RAM (GB)" />
+        <input type="password" id="security" placeholder="Security code"></input>
+        <button onclick="registrarNuevo()">Register</button>
+      </div>
+      <div id="status-log" class="log-area"></div>
+      <div id="inventario-display" class="grid-container"></div>
+    </div>
+    <script src="assets/js/motor.js"></script>
+  </body>
+</html>

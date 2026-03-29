@@ -1,31 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>SISTEMA DE SEGURIDAD - INF5001</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" type="image/png" href="assets/images/Logo_Activando_El_Coeficiente_Intelectual_Tab.png">
-</head>
-<body>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/images/Logo_Activando_El_Coeficiente_Intelectual_Tab.png"
+    />
+  </head>
+  <body>
     <div class="container">
-        <h1>Panel de Control: Seguridad Perimetral</h1>
-        
-        <div class="form-group">
-            <input type="text" id="nombre" placeholder="Nombre de Usuario">
-            <input type="password" id="pass" placeholder="Password Secreto">
-            <select id="tipo">
-                <option value="estandar">Usuario Estándar</option>
-                <option value="admin">Administrador (Herencia)</option>
-            </select>
-            <button onclick="registrarNuevo()">Registrar en Sistema</button>
-        </div>
+      <h1>Panel de Control: Seguridad Perimetral</h1>
 
-        <div id="log-mensajes" class="logs"> Consola de sistema lista...
-        </div>
+      <div class="form-group">
+        <input type="text" id="nombre" placeholder="Nombre de Usuario" />
+        <input type="password" id="pass" placeholder="Password Secreto" />
+        <select id="tipo">
+          <option value="estandar">Usuario Estándar</option>
+          <option value="admin">Administrador (Herencia)</option>
+        </select>
+        <button onclick="registrarNuevo()">Registrar en Sistema</button>
+      </div>
 
-        <div id="lista-usuarios" class="grid-display">
-            </div>
+      <div id="log-mensajes" class="logs">Consola de sistema lista...</div>
+
+      <div id="lista-usuarios" class="grid-display"></div>
     </div>
     <script src="assets/js/4-el-motor.js"></script>
-</body>
+  </body>
 </html>
