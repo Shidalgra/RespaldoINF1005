@@ -71,41 +71,33 @@ function registrarNuevo() {
     let ram = Number(document.getElementById("ram").value);
     let security = document.getElementById("security").value;
 
-    if (type === "" || type === "Category") 
-        throw new Error("You forgot the category.");
-    if (!name )
-      throw new Error("You forgot to include the Name.");
-    if (!ram)
-      throw new Error("You forgot to include the RAM.");
-    if (ram <= 0) 
-        throw new Error("La RAM debe ser positiva.");
-    if (!security)
-      throw new Error("The RAM must be in positive numbers.");
-    if (security.length < 4) 
-        throw new Error("The security code needs to be stronger.");
+    if (type === "" || type === "Category")
+      throw new Error("You forgot the category.");
+    if (!name) throw new Error("You forgot to include the Name.");
+    if (!ram) throw new Error("You forgot to include the RAM.");
+    if (ram <= 0) throw new Error("La RAM debe ser positiva.");
+    if (!security) throw new Error("The RAM must be in positive numbers.");
+    if (security.length < 4)
+      throw new Error("The security code needs to be stronger.");
 
     let nuevoEquipo;
 
     if (type === "Server") nuevoEquipo = new Server(name, security, ram);
-    else if (type === "Laptop")
-      nuevoEquipo = new Laptop(name, security, ram);
+    else if (type === "Laptop") nuevoEquipo = new Laptop(name, security, ram);
     else nuevoEquipo = new Desktop(name, security, ram);
 
     baseDatos.push(nuevoEquipo);
     renderizar();
 
-    log.innerText = `**Success** ${name} it has been successfully registered ...this message will clear all fields in 5 seconds`;
-    log.style.color = "lightgreen";
-    setTimeout(resetFormUI, 5000);
+    iniciarTemporizador(
+      `✓ SUCCESS: ${name} has been successfully registered. Clearing form in`,
+      "lightgreen",
+    );
   } catch (error) {
-    log.innerText = `[ERROR] ${error.message} ...this message will clear all fields in 5 seconds`;
     log.classList.add("critical-error");
-    log.style.color = "red";
-    setTimeout(resetFormUI, 5000);
+    iniciarTemporizador(`✕ ERROR: ${error.message}. Clearing form in`, "red");
   }
 }
-
-
 
 function resetFormUI() {
   document.getElementById("name").value = "";
@@ -118,6 +110,27 @@ function resetFormUI() {
   let log = document.getElementById("status-log");
   log.innerText = "";
   log.classList.remove("critical-error");
+}
+
+function iniciarTemporizador(mensajeBase, color) {
+  let log = document.getElementById("status-log");
+  let segundos = 5;
+
+  log.style.color = color;
+
+  // Mostrar inmediatamente el primer mensaje
+  log.innerText = `${mensajeBase} (${segundos}s)`;
+
+  let intervalo = setInterval(() => {
+    segundos--;
+
+    log.innerText = `${mensajeBase} (${segundos}s)`;
+
+    if (segundos <= 0) {
+      clearInterval(intervalo);
+      resetFormUI();
+    }
+  }, 1000);
 }
 
 document.getElementById("name").value = "";
