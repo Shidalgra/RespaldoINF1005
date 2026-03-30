@@ -1,0 +1,201 @@
+/*Limpiando*/
+
+/* Selecciona TODOS los elementos */
+*,
+*::before,
+*::after {
+  margin: 0; /* Quita márgenes externos */
+  padding: 0; /* Quita rellenos internos */
+  box-sizing: border-box; /* ¡VITAL! Hace que el padding no sume al ancho total */
+}
+
+html {
+  scroll-behavior: smooth; /* Hace que al saltar entre secciones el scroll sea suave */
+}
+
+body {
+  min-height: 100vh; /* Alto del vieport - Que siempre ocupe al menos el alto de la pantalla */
+  line-height: 1.5; /* Mejora la lectura del texto */
+  -webkit-font-smoothing: antialiased; /* Hace que las letras se vean más finas y nítidas */
+  font-family:
+    "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* O la fuente que elijas */
+  background-color: #f4f4f4;
+  color: #333;
+  overflow-x: hidden; /* Evita el scroll horizontal molesto por errores de píxeles */
+}
+
+/* Evita que las imágenes se salgan de su contenedor */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block; /* Quita un espacio extraño que dejan abajo las imágenes */
+  max-width: 100%;
+}
+
+/* Quita los puntos de las listas (ul/ol) */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Quita la línea de abajo de los enlaces y les da un color base */
+a {
+  text-decoration: none;
+  color: inherit; /* Hereda el color del texto del padre */
+}
+
+/* Hace que los botones y inputs se vean iguales en todos lados */
+button,
+input,
+textarea {
+  font: inherit; /* Obliga a usar la misma fuente que el body */
+  border: none;
+  outline: none; /* Quita el borde azul feo al hacer clic */
+}
+
+button {
+  cursor: pointer; /* Siempre pone la manito al pasar el mouse */
+}
+
+/* --------------------------------------------------------------------------------------- */
+
+/* --- Estilos Base Actualizados (Importante para el centrado) --- */
+html,
+body {
+  height: 100%; /* Asegura que el body ocupe todo el alto */
+  margin: 0;
+  padding: 0;
+}
+
+/* El Fondo y el "Glow" (Contraste de Profundidad)
+En lugar de un gris plano (#cfcfcf), usaremos un degradado radial sutil. 
+Esto hace que el formulario parezca "flotar" hacia el usuario. */
+body {
+  /* Fondo más moderno y profundo */
+  background: radial-gradient(circle at top, #eef2f3 0%, #d5dce0 100%);
+  display: flex; /* Centrado perfecto */
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-box {
+  max-width: 450px;
+  margin: 60px auto;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 20px; /* Bordes más redondeados para un look moderno */
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12); /* Elevamos la sombra: menos opacidad, más difusión */
+  text-align: center;
+  backdrop-filter: blur(5px); /* Toque sutil de cristal */
+}
+
+/*
+Tipografía y Micro-Textos
+El contraste de calidad se nota en la diferencia entre el título y el cuerpo. Vamos a darle peso al h2 y suavizar el p.
+*/
+
+h2 {
+  font-weight: 800; /* Más pesado para contraste */
+  letter-spacing: -0.5px;
+  color: #1a1a1a;
+}
+
+p {
+  font-weight: 500;
+  color: #636e72;
+  line-height: 1.6;
+}
+
+/* Inputs: El "Focus State" de Lujo
+En lugar de solo cambiar el borde, haremos que el fondo del input se ilumine ligeramente. */
+input {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  background-color: #f1f3f5;
+  border: 2px solid transparent; /* Evita saltos de píxeles al hacer focus */
+  color: #2d3436;
+}
+
+input:focus {
+  background-color: #ffffff;
+  border-color: #0984e3;
+  /* El brillo exterior (Ring) con un color más vibrante */
+  box-shadow: 0 0 0 5px rgba(9, 132, 227, 0.15);
+  transform: scale(1.01); /* Micro-escala para feedback táctil visual */
+}
+
+textarea {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  background-color: #f1f3f5;
+  border: 2px solid transparent; /* Evita saltos de píxeles al hacer focus */
+  color: #2d3436;
+
+  /* --- ESTAS SON LAS LÍNEAS QUE ARREGLAN EL PROBLEMA --- */
+  resize: vertical; /* SÓLO permite estirar hacia abajo, no hacia los lados */
+  min-height: 120px; /* Altura mínima inicial */
+  max-height: 400px; /* OPCIONAL: Altura máxima para que no se coma toda la pantalla */
+  box-sizing: border-box; /* Asegura que el padding no sume al ancho */
+}
+
+textarea:focus {
+  background-color: #ffffff;
+  border-color: #0984e3;
+  /* El brillo exterior (Ring) con un color más vibrante */
+  box-shadow: 0 0 0 5px rgba(9, 132, 227, 0.15);
+  transform: scale(1.01); /* Micro-escala para feedback táctil visual */
+}
+
+/* Botón con Efecto Cristalino
+Para que el botón no sea solo un degradado, le daremos un brillo en la parte superior para simular material 3D. */
+button {
+  margin-top: 20px;
+  position: relative;
+  background: linear-gradient(135deg, #0984e3 0%, #00a8ff 100%);
+  color: white;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(9, 132, 227, 0.3);
+  overflow: hidden;
+}
+
+button:hover {
+  transform: translateY(-2px); /* Pequeña elevación al pasar el mouse */
+  box-shadow: 0 6px 20px rgba(9, 132, 227, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Efecto de brillo al pasar el mouse */
+button::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(45deg);
+  transition: 0.5s;
+}
+
+button:hover::after {
+  left: 120%;
+}

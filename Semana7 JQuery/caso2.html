@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/2-Caso2.css" />
+    <title>Panel JQuery</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/images/Logo_Activando_El_Coeficiente_Intelectual_Tab.png"
+    />
+  </head>
+  <body>
+    <div class="contact-box">
+      <form id="miFormulario">
+        <h2>Reportar Incidencia</h2>
+        <p>Por favor, completa los datos a continuación.</p>
+
+        <div class="input-group">
+          <input type="text" id="nombre" placeholder="Tu Nombre" required />
+        </div>
+
+        <textarea
+          id="mensaje"
+          placeholder="Describe el reporte..."
+          required
+        ></textarea>
+
+        <button type="submit">Enviar Reporte</button>
+      </form>
+
+      <div id="mensajeExito" style="display: none">
+        <div id="mensaje-exito">
+          <span class="icon-check">✔</span>
+          <h3>¡Recibido con éxito!</h3>
+          <p>Hemos registrado tu reporte correctamente.</p>
+          <button id="btn-volver">Enviar otro reporte</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/2-Caso2.js"></script>
+  </body>
+</html>
