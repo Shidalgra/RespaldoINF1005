@@ -11,3 +11,5 @@ console.log("Curso: " + curso);
 console.log("Estudiantes: " + estudiantes);
 console.log("¿Es presencial?: " + esPresencial);
 console.log("Mensaje: " + mensaje);
+console.log("Mensaje: " + mensaje + "Ustedes son los mejores... Sigan así");
+
