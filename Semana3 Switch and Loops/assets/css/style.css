@@ -85,6 +85,24 @@ button {
   gap: 25px;
 }
 
+.control {
+  background: linear-gradient(135deg, #0984e3, #6c5ce7);
+  color: white;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.control:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 18px rgba(0,0,0,0.15);
+}
+
+.control:active{
+    transform:scale(.97);
+}
+
 .monitor {
   background: #1e1e1e;
   color: #00ff00; /* Verde terminal */

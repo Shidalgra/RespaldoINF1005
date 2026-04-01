@@ -98,6 +98,16 @@ input[type="number"] {
   transition: 0.3s;
 }
 
+.btn-primary:hover {
+  transform:translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.btn-primary:active {
+  transform:scale(.97);
+}
+
+
 .btn-primary:disabled {
     background-color: #b2bec3;
     cursor: not-allowed;
