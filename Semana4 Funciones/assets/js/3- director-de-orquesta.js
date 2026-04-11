@@ -53,5 +53,5 @@ function ejecutarSistema(opcion) {
 
 // Estas líneas ahora sí funcionarán porque no dependen del navegador/HTML
 ejecutarSistema(1);
-console.log("\n"); // Espacio en consola
-ejecutarSistema(2);
+console.log("\n"); // salto de línea en consola
+//ejecutarSistema(2);
