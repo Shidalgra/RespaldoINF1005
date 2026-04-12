@@ -101,7 +101,7 @@ function registrarNuevo() {
 
 function resetFormUI() {
   document.getElementById("name").value = "";
-  document.getElementById("ram").value = 0;
+  document.getElementById("ram").value = "";
   document.getElementById("security").value = "";
   document.getElementById("type").value = "Category";
   document.getElementById("type").style.zIndex = 0;
@@ -134,7 +134,7 @@ function iniciarTemporizador(mensajeBase, color) {
 }
 
 document.getElementById("name").value = "";
-document.getElementById("ram").value = 0;
+document.getElementById("ram").value = "";
 document.getElementById("security").value = "";
 document.getElementById("type").style.zIndex = 0;
 
