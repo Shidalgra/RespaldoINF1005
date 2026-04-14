@@ -1,0 +1,94 @@
+/* Reset y estilos base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    color: #2d3436;
+    margin-bottom: 10px;
+}
+
+.controls {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Botón Profesional */
+#btn-publicaciones {
+    background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#btn-publicaciones:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(108, 92, 231, 0.3);
+}
+
+/* Grid Responsivo con auto-fill y minmax */
+.grid-publicaciones {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* Estilo de Tarjeta (Card) */
+.card-noticia {
+    background: white;
+    border-left: 5px solid #6c5ce7;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-noticia:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.12);
+}
+
+.card-noticia h3 {
+    font-size: 18px;
+    color: #2d3436;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.card-noticia p {
+    font-size: 14px;
+    color: #636e72;
+    line-height: 1.6;
+}

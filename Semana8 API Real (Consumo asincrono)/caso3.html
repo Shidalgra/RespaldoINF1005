@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caso No. 3 - Dashboard de Noticias</title>
+    <link rel="stylesheet" href="./assets/css/caso3.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dashboard de Publicaciones Globales</h1>
+            <p>Presione el botón para sincronizar las noticias desde la nube.</p>
+            
+            <div class="controls">
+                <button id="btn-publicaciones">Cargar Publicaciones Cloud</button>
+                <div id="loading" style="display: none;">
+                    <span class="spinner"></span> Cargando datos...
+                </div>
+            </div>
+        </header>
+
+        <div id="contenedor-noticias" class="grid-publicaciones"></div>
+    </div>
+
+    <script src="./assets/js/corazon-Caso3.js"></script>
+</body>
+</html>
