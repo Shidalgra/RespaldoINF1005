@@ -1,7 +1,7 @@
 // Espera a que todo el HTML esté cargado antes de ejecutar el script
 $(document).ready(function () {
   // Escuchamos el evento CLICK del botón con id="btn-cargar"
-  $("#btn-cargar").click(function () { ///////////////////////////////////////////////////////Event listener
+  $("#btn-cargar").click(function () {   // <-- Event listener
     // Guardamos en variables los elementos del DOM que vamos a usar
     const contenedor = $("#tabla-usuarios"); // div donde se insertarán las tarjetas
     const loader = $("#loading"); // texto "Cargando datos..."
